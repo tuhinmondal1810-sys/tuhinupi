@@ -88,13 +88,43 @@ function Index() {
               </button>
             </div>
 
-            {/* Pay button (mobile UPI deep link) */}
+            {/* Pay buttons — app-specific UPI deep links */}
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <a
+                href={`phonepe://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
+                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#5f259f] text-white hover:opacity-90 transition-opacity"
+              >
+                PhonePe
+              </a>
+              <a
+                href={`tez://upi/pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
+                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#1a73e8] text-white hover:opacity-90 transition-opacity"
+              >
+                Google Pay
+              </a>
+              <a
+                href={`paytmmp://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
+                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#00baf2] text-white hover:opacity-90 transition-opacity"
+              >
+                Paytm
+              </a>
+              <a
+                href={`amazonpay://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
+                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#ff9900] text-white hover:opacity-90 transition-opacity"
+              >
+                Amazon Pay
+              </a>
+            </div>
+
             <a
               href={upiUrl}
-              className="mt-4 block w-full text-center font-semibold py-3 rounded-xl bg-foreground text-background hover:opacity-90 transition-opacity"
+              className="mt-3 block w-full text-center font-semibold py-3 rounded-xl bg-foreground text-background hover:opacity-90 transition-opacity"
             >
-              Pay via UPI App
+              Choose UPI App
             </a>
+            <p className="mt-2 text-[10px] text-muted-foreground">
+              Buttons work on mobile only. On desktop, scan the QR code above.
+            </p>
           </div>
 
           <div className="px-6 py-4 bg-muted/40 border-t border-border text-center">
