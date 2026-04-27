@@ -32,9 +32,23 @@ function Index() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-secondary to-background flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
-        <div className="bg-card rounded-3xl shadow-2xl border border-border overflow-hidden">
+    <main className="relative min-h-screen flex items-center justify-center px-4 py-12">
+      {/* Animated transparent background */}
+      <div className="animated-bg" aria-hidden="true">
+        <div className="blob blob-1" />
+        <div className="blob blob-2" />
+        <div className="blob blob-3" />
+        <span className="spark" style={{ left: "10%", animationDelay: "0s" }} />
+        <span className="spark" style={{ left: "25%", animationDelay: "3s", animationDuration: "18s" }} />
+        <span className="spark" style={{ left: "45%", animationDelay: "6s", animationDuration: "12s" }} />
+        <span className="spark" style={{ left: "65%", animationDelay: "2s", animationDuration: "16s" }} />
+        <span className="spark" style={{ left: "82%", animationDelay: "8s" }} />
+        <span className="spark" style={{ left: "92%", animationDelay: "5s", animationDuration: "20s" }} />
+      </div>
+
+      <div className="w-full max-w-md relative">
+        <div className="bg-card/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 overflow-hidden animate-fade-in">
+
           {/* Header band */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-400 h-32 relative flex flex-col items-center justify-start pt-4">
             <p className="text-white text-xs font-semibold uppercase tracking-[0.2em]">
