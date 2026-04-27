@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
 import ownerPhoto from "@/assets/owner.jpg";
+import phonepeLogo from "@/assets/phonepe.png";
+import gpayLogo from "@/assets/gpay.png";
+import paytmLogo from "@/assets/paytm.png";
+import amazonpayLogo from "@/assets/amazonpay.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
