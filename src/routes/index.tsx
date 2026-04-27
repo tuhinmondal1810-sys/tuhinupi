@@ -32,7 +32,13 @@ function Index() {
       <div className="w-full max-w-md">
         <div className="bg-card rounded-3xl shadow-2xl border border-border overflow-hidden">
           {/* Header band */}
-          <div className="bg-gradient-to-r from-primary to-primary/80 h-28 relative">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-400 h-32 relative flex flex-col items-center justify-start pt-4">
+            <p className="text-white text-xs font-semibold uppercase tracking-[0.2em]">
+              Secure Payment
+            </p>
+            <p className="text-white/90 text-sm font-medium mt-1">
+              {NAME}
+            </p>
             <div className="absolute -bottom-14 left-1/2 -translate-x-1/2">
               <div className="w-28 h-28 rounded-full ring-4 ring-card overflow-hidden bg-muted shadow-xl">
                 <img
