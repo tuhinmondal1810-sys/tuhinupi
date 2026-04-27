@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
 import ownerPhoto from "@/assets/owner.jpg";
+import phonepeLogo from "@/assets/phonepe.png";
+import gpayLogo from "@/assets/gpay.png";
+import paytmLogo from "@/assets/paytm.png";
+import amazonpayLogo from "@/assets/amazonpay.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,27 +96,31 @@ function Index() {
             <div className="mt-4 grid grid-cols-2 gap-2">
               <a
                 href={`phonepe://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
-                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#5f259f] text-white hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-xl bg-white border border-border hover:bg-secondary transition-colors"
               >
-                PhonePe
+                <img src={phonepeLogo} alt="PhonePe" width={24} height={24} loading="lazy" className="w-6 h-6 object-contain" />
+                <span className="text-foreground">PhonePe</span>
               </a>
               <a
                 href={`tez://upi/pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
-                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#1a73e8] text-white hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-xl bg-white border border-border hover:bg-secondary transition-colors"
               >
-                Google Pay
+                <img src={gpayLogo} alt="Google Pay" width={24} height={24} loading="lazy" className="w-6 h-6 object-contain" />
+                <span className="text-foreground">Google Pay</span>
               </a>
               <a
                 href={`paytmmp://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
-                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#00baf2] text-white hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-xl bg-white border border-border hover:bg-secondary transition-colors"
               >
-                Paytm
+                <img src={paytmLogo} alt="Paytm" width={24} height={24} loading="lazy" className="w-6 h-6 object-contain" />
+                <span className="text-foreground">Paytm</span>
               </a>
               <a
                 href={`amazonpay://pay?pa=${UPI_ID}&pn=${encodeURIComponent(NAME)}&cu=INR`}
-                className="text-center text-sm font-semibold py-3 rounded-xl bg-[#ff9900] text-white hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-xl bg-white border border-border hover:bg-secondary transition-colors"
               >
-                Amazon Pay
+                <img src={amazonpayLogo} alt="Amazon Pay" width={24} height={24} loading="lazy" className="w-6 h-6 object-contain" />
+                <span className="text-foreground">Amazon Pay</span>
               </a>
             </div>
 
