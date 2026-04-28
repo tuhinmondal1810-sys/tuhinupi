@@ -19,9 +19,10 @@ export const Route = createFileRoute("/generator")({
 type Errors = Partial<Record<"name" | "upiId" | "amount", string>>;
 
 const PERMANENT_UPI_ID = "tuhinmondal1810-4@okaxis";
+const PERMANENT_NAME = "Tuhin Mondal";
 
 function Generator() {
-  const [name, setName] = useState("");
+  const [name] = useState(PERMANENT_NAME);
   const [upiId] = useState(PERMANENT_UPI_ID);
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
@@ -107,7 +108,6 @@ function Generator() {
   };
 
   const onReset = () => {
-    setName("");
     setAmount("");
     setNote("");
     setErrors({});
@@ -154,10 +154,11 @@ function Generator() {
               <Field
                 label="Receiver Name"
                 value={name}
-                onChange={setName}
+                onChange={() => undefined}
                 placeholder="Tuhin Mondal"
                 error={errors.name}
                 maxLength={100}
+                readOnly
               />
               <Field
                 label="UPI ID"
