@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
 import ownerPhoto from "@/assets/owner.jpg";
@@ -149,7 +149,13 @@ function Index() {
             </p>
           </div>
 
-          <div className="px-6 py-4 bg-muted/40 border-t border-border text-center">
+          <div className="px-6 py-4 bg-muted/40 border-t border-border text-center space-y-2">
+            <Link
+              to="/generator"
+              className="inline-block text-xs font-semibold px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              ✨ Create Custom UPI QR
+            </Link>
             <p className="text-[11px] text-muted-foreground">
               Supports Google Pay · PhonePe · Paytm · BHIM
             </p>
