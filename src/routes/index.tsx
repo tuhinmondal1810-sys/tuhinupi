@@ -66,7 +66,7 @@ function Index() {
       </div>
 
       <div className="w-full max-w-md relative">
-        <div className="bg-card/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 overflow-hidden animate-fade-in">
+        <div className="bg-card/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 overflow-hidden animate-fade-in relative z-10">
 
           {/* Header band */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-400 h-32 relative flex flex-col items-center justify-start pt-4">
