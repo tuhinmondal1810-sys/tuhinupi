@@ -38,12 +38,31 @@ function Index() {
         <div className="blob blob-1" />
         <div className="blob blob-2" />
         <div className="blob blob-3" />
+
+        {/* Concentric pulsing payment waves */}
+        <div className="wave" />
+        <div className="wave wave-2" />
+        <div className="wave wave-3" />
+
+        {/* Orbiting rings */}
+        <div className="orbit orbit-1" />
+        <div className="orbit orbit-2" />
+        <div className="orbit orbit-3" />
+
+        {/* Floating sparks */}
         <span className="spark" style={{ left: "10%", animationDelay: "0s" }} />
         <span className="spark" style={{ left: "25%", animationDelay: "3s", animationDuration: "18s" }} />
         <span className="spark" style={{ left: "45%", animationDelay: "6s", animationDuration: "12s" }} />
         <span className="spark" style={{ left: "65%", animationDelay: "2s", animationDuration: "16s" }} />
         <span className="spark" style={{ left: "82%", animationDelay: "8s" }} />
         <span className="spark" style={{ left: "92%", animationDelay: "5s", animationDuration: "20s" }} />
+
+        {/* Floating ₹ coins */}
+        <span className="coin" style={{ left: "8%", animationDelay: "0s" }}>₹</span>
+        <span className="coin" style={{ left: "30%", animationDelay: "4s", animationDuration: "20s" }}>₹</span>
+        <span className="coin" style={{ left: "55%", animationDelay: "7s", animationDuration: "14s" }}>₹</span>
+        <span className="coin" style={{ left: "75%", animationDelay: "2s", animationDuration: "18s" }}>₹</span>
+        <span className="coin" style={{ left: "90%", animationDelay: "9s", animationDuration: "22s" }}>₹</span>
       </div>
 
       <div className="w-full max-w-md relative">
