@@ -288,6 +288,11 @@ function Field({
         placeholder={placeholder}
         maxLength={maxLength}
         inputMode={type === "number" ? "decimal" : undefined}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        readOnly={false}
         className={`w-full h-11 rounded-xl border bg-background px-3 text-sm text-foreground shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40 ${
           error ? "border-destructive" : "border-input"
         }`}
