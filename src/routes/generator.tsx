@@ -18,9 +18,11 @@ export const Route = createFileRoute("/generator")({
 
 type Errors = Partial<Record<"name" | "upiId" | "amount", string>>;
 
+const PERMANENT_UPI_ID = "tuhinmondal1810-4@okaxis";
+
 function Generator() {
   const [name, setName] = useState("");
-  const [upiId, setUpiId] = useState("");
+  const [upiId] = useState(PERMANENT_UPI_ID);
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
   const [errors, setErrors] = useState<Errors>({});
@@ -106,7 +108,6 @@ function Generator() {
 
   const onReset = () => {
     setName("");
-    setUpiId("");
     setAmount("");
     setNote("");
     setErrors({});
@@ -161,10 +162,11 @@ function Generator() {
               <Field
                 label="UPI ID"
                 value={upiId}
-                onChange={setUpiId}
+                onChange={() => undefined}
                 placeholder="name@okaxis"
                 error={errors.upiId}
                 maxLength={256}
+                readOnly
               />
               <Field
                 label="Amount (₹)"
@@ -267,6 +269,7 @@ function Field({
   error,
   type = "text",
   maxLength,
+  readOnly = false,
 }: {
   label: string;
   value: string;
@@ -275,6 +278,7 @@ function Field({
   error?: string;
   type?: string;
   maxLength?: number;
+  readOnly?: boolean;
 }) {
   return (
     <div>
@@ -284,7 +288,7 @@ function Field({
       <input
         type={type}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => !readOnly && onChange(e.target.value)}
         placeholder={placeholder}
         maxLength={maxLength}
         inputMode={type === "number" ? "decimal" : undefined}
@@ -292,7 +296,7 @@ function Field({
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck={false}
-        readOnly={false}
+        readOnly={readOnly}
         className={`w-full h-11 rounded-xl border bg-background px-3 text-sm text-foreground shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40 ${
           error ? "border-destructive" : "border-input"
         }`}
