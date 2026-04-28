@@ -230,3 +230,71 @@
   animation: spark-float 14s linear infinite;
 }
 
+/* ===== Unique extra animations ===== */
+@keyframes coin-rise {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.85; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(-115vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes ring-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes ring-spin-rev {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes pulse-wave {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0.55; }
+  100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+}
+
+.coin {
+  position: absolute;
+  bottom: -40px;
+  width: 28px; height: 28px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: oklch(0.35 0.1 80);
+  background: radial-gradient(circle at 30% 30%, oklch(0.95 0.13 90), oklch(0.78 0.18 75) 70%);
+  box-shadow:
+    inset 0 -2px 4px oklch(0.55 0.15 70 / 0.5),
+    0 0 14px oklch(0.85 0.18 80 / 0.6);
+  animation: coin-rise 16s linear infinite;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 9999px;
+  border: 1.5px dashed oklch(0.65 0.18 265 / 0.35);
+  pointer-events: none;
+}
+
+.orbit-1 { width: 540px; height: 540px; animation: ring-spin 40s linear infinite; }
+.orbit-2 { width: 720px; height: 720px; border-style: dotted; border-color: oklch(0.7 0.16 220 / 0.3); animation: ring-spin-rev 60s linear infinite; }
+.orbit-3 { width: 900px; height: 900px; border-color: oklch(0.75 0.14 160 / 0.25); animation: ring-spin 90s linear infinite; }
+
+.wave {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 240px; height: 240px;
+  border-radius: 9999px;
+  border: 2px solid oklch(0.7 0.18 265 / 0.5);
+  animation: pulse-wave 5s ease-out infinite;
+}
+.wave-2 { animation-delay: 1.6s; border-color: oklch(0.72 0.16 220 / 0.5); }
+.wave-3 { animation-delay: 3.2s; border-color: oklch(0.78 0.14 160 / 0.5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob, .spark, .coin, .orbit, .wave, .animated-bg::before { animation: none !important; }
+}
+
