@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
+import { Download } from "lucide-react";
 import ownerPhoto from "@/assets/owner.jpg";
 import phonepeLogo from "@/assets/phonepe.png";
 import gpayLogo from "@/assets/gpay.png";
