@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
+import { Download } from "lucide-react";
 import ownerPhoto from "@/assets/owner.jpg";
 import phonepeLogo from "@/assets/phonepe.png";
 import gpayLogo from "@/assets/gpay.png";
@@ -166,6 +167,19 @@ function Index() {
             <p className="mt-2 text-[10px] text-muted-foreground">
               Buttons work on mobile only. On desktop, scan the QR code above.
             </p>
+
+            {/* Download App CTA */}
+            <div className="mt-5 flex justify-center">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.phonepe.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-xl hover:shadow-purple-500/40 active:scale-100 focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+              >
+                <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+                <span>Download App</span>
+              </a>
+            </div>
           </div>
 
           <div className="px-6 py-4 bg-muted/40 border-t border-border text-center space-y-2">
