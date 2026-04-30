@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
-import { Download } from "lucide-react";
+import { BottomNav } from "@/components/BottomNav";
 import ownerPhoto from "@/assets/owner.jpg";
 import phonepeLogo from "@/assets/phonepe.png";
 import gpayLogo from "@/assets/gpay.png";
@@ -33,7 +33,7 @@ function Index() {
   };
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center px-4 py-12">
+    <main className="relative min-h-screen flex items-center justify-center px-4 py-12 pb-28">
       {/* Animated transparent background */}
       <div className="animated-bg" aria-hidden="true">
         <div className="blob blob-1" />
@@ -168,17 +168,20 @@ function Index() {
               Buttons work on mobile only. On desktop, scan the QR code above.
             </p>
 
-            {/* Download App CTA */}
-            <div className="mt-5 flex justify-center">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.phonepe.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-xl hover:shadow-purple-500/40 active:scale-100 focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+            {/* Quick actions */}
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              <Link
+                to="/send"
+                className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 py-3 text-center text-sm font-bold text-white shadow-md transition-all hover:scale-[1.02] hover:shadow-lg"
               >
-                <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
-                <span>Download App</span>
-              </a>
+                💸 Send Money
+              </Link>
+              <Link
+                to="/history"
+                className="rounded-xl border border-border bg-card py-3 text-center text-sm font-semibold text-foreground hover:bg-secondary"
+              >
+                📜 History
+              </Link>
             </div>
           </div>
 
@@ -195,6 +198,7 @@ function Index() {
           </div>
         </div>
       </div>
+      <BottomNav />
     </main>
   );
 }
